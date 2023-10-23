@@ -33,46 +33,51 @@
 
 
 
-const noteStudenti = {
-    John: [8, 7,9],
-    Mary: [9, 9, 10],
-    Alex: [6, 8, 7]
-};
+// const noteStudenti = {
+//     John: [8, 7,9],
+//     Mary: [9, 9, 10],
+//     Alex: [6, 8, 7]
+// };
 
-function calculMedii(noteStudenti) {
-    const medii = {};
+// function calculMedii(noteStudenti) {
+//     const medii = {};
 
-    for (const student in noteStudenti) {
-        const note = noteStudenti[student];
-        const sumaNotelor = note.reduce((acc, nota) => acc + nota, 0);
-        const media = sumaNotelor / note.length;
-        medii[student] = `Medie: ${media.toFixed(2)}`;
-    }
+//     for (const student in noteStudenti) {
+//         const note = noteStudenti[student];
+//         const sumaNotelor = note.reduce((acc, nota) => acc + nota, 0);
+//         const media = sumaNotelor / note.length;
+//         medii[student] = `Medie: ${media.toFixed(2)}`;
+//     }
 
-    return medii;
-}
+//     return medii;
+// }
 
 
-
-const mediiStudenti = calculMedii(noteStudenti);
-console.log(mediiStudenti);
-
+// const mediiStudenti = calculMedii(noteStudenti);
+// console.log(mediiStudenti);
 
 
 
+
+
+
+// const input = 'Hello World!';
 
 // function caractereInversate(mesaj) {
 //     const sirInversat = mesaj.split('').reverse().join('');
 //     return sirInversat
 // }
 
-// const input = 'Hello World!';
+
 // const output = caractereInversate(input);
 // console.log(output);
 
 
 
 
+
+
+// const input = 'level';
 
 // function esteSauNuPalindrom(sir) {
 
@@ -81,12 +86,62 @@ console.log(mediiStudenti);
 //     return sir === sirInversat;
 // }
 
-// const input = 'level';
+
 // const palindrom = esteSauNuPalindrom(input);
 // console.log(palindrom);
 
 
 
+
+// function findBestMatch(k, numere) {
+//     if (numere.length === 0) {
+//         return null;
+//     }   
+
+// let numarApropiat = numere[0];
+// let diferentaMica = Math.abs(k - numere[0]);
+
+// for (let i= 1;i < numere.length; i++) {
+//     const diferenta = Math.abs(numere[i]);
+//     const (diferenta < diferentaMica) {
+//         diferentaMica = diferenta;
+//         numarApropiat = numere[i]
+//     }
+// }
+
+//     return numarApropiat;
+// }
+// const k = 5;
+// const numere = [2, 6, 3, 8, 9, 1];
+// const result = findBestMatch(k, numere);
+
+// console.log(result);
+
+
+function findBestMatch(k, numere) {
+    if (numere.length === 0) {
+        return null;
+    }
+
+    let numarApropiat = numere[0];
+    let diferentaMica = Math.abs(k - numere[0]);
+
+    for (let i = 1; i < numere.length; i++) {
+        const diferenta = Math.abs(k - numere[i]);
+        if (diferenta < diferentaMica) {
+            diferentaMica = diferenta;
+            numarApropiat = numere[i];
+        }
+    }
+
+    return numarApropiat;
+}
+
+const k = 5;
+const numere = [2, 6, 3, 8, 9, 1];
+const result = findBestMatch(k, numere);
+
+console.log(result);
 
 
 
